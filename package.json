@@ -1,0 +1,24 @@
+{
+  "name": "tu-cuento-sonado",
+  "version": "1.0.0",
+  "description": "maqueta tu cuento soñado",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "jquery-background-video": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node_modules/.bin/webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emiliano0662/tu-cuento-sonado.git"
+  },
+  "author": "Emiliano Carreño",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emiliano0662/tu-cuento-sonado/issues"
+  },
+  "homepage": "https://github.com/emiliano0662/tu-cuento-sonado#readme"
+}
