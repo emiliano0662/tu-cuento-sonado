@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700|Nunito:400,800|Titillium+Web:400,700|Source+Sans+Pro:300');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700|Nunito:400,800,900|Titillium+Web:400,700|Source+Sans+Pro:300');
 
 * {
 	font-family: 'Raleway', sans-serif;
@@ -8,6 +8,14 @@
 
 body {
 	overflow-x: hidden;
+}
+
+header,
+footer,
+section {
+	width: 100%;
+	float: left;
+	position: relative;
 }
 
 
