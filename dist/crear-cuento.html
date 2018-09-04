@@ -23,6 +23,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css">
 	<link rel="stylesheet" href="./assets/css/bundle.min.css">
 
 </head>
@@ -97,14 +98,19 @@
 
 <main>
 
-	<section class="create-story-block container-create-story-1">
-		<div class="container">
-	
-			<div class="row">
+	<form id="form-crear-cuento" action="./generate-image/script-create-story.php" method="POST">
+		<input type="hidden" id="hidde_value_skin" name="hidde_value_skin" value="1">
+		<input type="hidden" id="hidde_value_eyes" name="hidde_value_eyes" value="1">
+		<input type="hidden" id="hidde_value_hair" name="hidde_value_hair" value="1">
 
-				<div class="col-md-7">
+		<input type="hidden" id="hidden_croppie_img_file" name="hidden_croppie_img_file">
 
-					<form action="crear-cuento.html" method="POST">
+		<section class="create-story-block container-create-story-1">
+			<div class="container">
+		
+				<div class="row">
+
+					<div class="col-md-7">
 
 						<div class="container-box">
 
@@ -120,7 +126,7 @@
 								<div class="col-md-12">
 
 									<div class="form-group">
-										<input type="text" class="form-control" id="name" placeholder="Nombre">
+										<input type="text" class="form-control" id="name" placeholder="Nombre" data-validation="required" data-validation-error-msg="* Campo requerido">
 									</div>
 
 								</div>
@@ -141,7 +147,7 @@
 									<div class="form-group">
 										<div class="radio">
 											<label>
-												<input type="radio" name="gender" value="1"> Niño
+												<input type="radio" name="gender" value="boy"> Niño
 											</label>
 										</div>
 									</div>
@@ -153,7 +159,7 @@
 									<div class="form-group">
 										<div class="radio">
 											<label>
-												<input type="radio" name="gender" value="2" checked="checked"> Niña
+												<input type="radio" name="gender" value="girl" checked="checked"> Niña
 											</label>
 										</div>
 									</div>
@@ -200,230 +206,245 @@
 
 						</div>
 
-					</form>
+					</div>
 
-				</div>
+					<div class="col-md-5">
 
-				<div class="col-md-5">
+						<div class="container-box">
+							<p>Te recomendamos indicar el nombre por el que habitualmente llamáis al niño.</p>
+							<p>Ten en cuenta que el nombre del protagonista se repite a lo largo del cuento y usar nombres largos puede resultar repetitivo y poco natural.</p>
+							<p>Evita las faltas de ortografía ya que es un regalo que suele perdurar en el tiempo.</p>
+						</div>
 
-					<div class="container-box">
-						<p>Te recomendamos indicar el nombre por el que habitualmente llamáis al niño.</p>
-						<p>Ten en cuenta que el nombre del protagonista se repite a lo largo del cuento y usar nombres largos puede resultar repetitivo y poco natural.</p>
-						<p>Evita las faltas de ortografía ya que es un regalo que suele perdurar en el tiempo.</p>
 					</div>
 
 				</div>
 
-			</div>
+				<div class="container-btn">
+		
+					<div class="row">
+						
+						<div class="col-md-6">
 
-			<div class="container-btn">
-	
+							<!--<button type="button" class="btn btn-default btn-change-create-story"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Apariencia</button>-->
+
+						</div>
+						
+						<div class="col-md-6">
+								
+							<button type="button" class="btn btn-default btn-change-create-story" data-item="2">Apariencia <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button>
+							
+						</div>
+						
+					</div>
+				
+				</div>
+
+			</div>
+		</section>
+
+		<section class="create-story-block container-create-story-2">
+			<div class="container">
+		
 				<div class="row">
-					
-					<div class="col-md-6">
+		
+					<div class="col-md-4">
 
-						<!--<button type="button" class="btn btn-default btn-change-create-story"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Apariencia</button>-->
-
-					</div>
-					
-					<div class="col-md-6">
-							
-						<button type="button" class="btn btn-default btn-change-create-story" data-item="2">Apariencia <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button>
+						<div class="owl-carousel carousel-create-story-items">
 						
-					</div>
-					
-				</div>
-			
-			</div>
+							<div class="item content-items-skin">
 
-		</div>
-	</section>
-
-	<section class="create-story-block container-create-story-2">
-		<div class="container">
-	
-			<div class="row">
-	
-				<div class="col-md-4">
-
-					<div class="owl-carousel carousel-create-story-items">
-					
-						<div class="item">
-
-							<div class="carousel-title">
-								<h3>Piel</h3>
-							</div>
-
-							<div class="carousel-item active">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-
-							<div class="carousel-item">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-
-							<div class="carousel-item">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-
-							<div class="carousel-item">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-
-							<div class="carousel-item">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-
-							<div class="carousel-item">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-
-						</div>
-
-						<div class="item">
-							
-							<div class="carousel-title">
-								<h3>Ojos</h3>
-							</div>
-							
-							<div class="carousel-item active">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-							
-							<div class="carousel-item">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-							
-							<div class="carousel-item">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-							
-							<div class="carousel-item">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-							
-							<div class="carousel-item">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-							
-							<div class="carousel-item">
-								<img src="https://www.mumablue.com/bundles/frontend/images/colors/19.png" alt="Imagen piel">
-							</div>
-							
-						</div>
-
-					</div>
-
-					<a href="#" class="btn-carousel-create-story btn-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
-					<a href="#" class="btn-carousel-create-story btn-right"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
-
-				</div>
-
-				<div class="col-md-8">
-					
-					<div id="create-story-avatar">
-						<img src="./assets/img/1-19-12-3-1-6-24-17-0-0-0-0.png" class="img-responsive">
-					</div>
-
-				</div>
-	
-			</div>
-	
-			<div class="container-btn">
-	
-				<div class="row">
-	
-					<div class="col-md-6">
-	
-						<button type="button" class="btn btn-default btn-change-create-story" data-item="1"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Nombre</button>
-	
-					</div>
-	
-					<div class="col-md-6">
-	
-						<button type="button" class="btn btn-default btn-change-create-story" data-item="3">Dedicatoria <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button>
-	
-					</div>
-	
-				</div>
-	
-			</div>
-	
-		</div>
-	</section>
-
-	<section class="create-story-block container-create-story-3">
-		<div class="container">
-	
-			<div class="row">
-	
-				<div class="col-md-7">
-
-					<div class="container-box">
-
-						<div class="row">
-							<div class="col-md-12">
-						
-								<h2>Escribe tu dedicatoria</h2>
-								<p class="subline">Aparecerá en la última página</p>
-						
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-12">
-						
-								<div class="form-group">
-									<textarea class="form-control" name="dedication" placeholder="Nombre" rows="6">Éste es un cuento mágico para un niño especial como tú. Esperamos que vivas fantásticas aventuras rodeado de los que más te quieren.</textarea>
+								<div class="carousel-title">
+									<h3>Piel</h3>
 								</div>
-						
+
+								<div class="carousel-item active" data-item="skin" data-type="1">
+									<div class="content-color" style="background-color: #ffdfbf;"></div>
+								</div>
+								
+								<div class="carousel-item" data-item="skin" data-type="2">
+									<div class="content-color" style="background-color: #f0b390;"></div>
+								</div>
+								
+								<div class="carousel-item" data-item="skin" data-type="3">
+									<div class="content-color" style="background-color: #af6d55;"></div>
+								</div>
+
 							</div>
+
+							<div class="item content-items-ayes">
+								
+								<div class="carousel-title">
+									<h3>Ojos</h3>
+								</div>
+
+								<div class="carousel-item active" data-item="ayes" data-type="1">
+									<div class="content-color" style="background-color: #36708c;"></div>
+								</div>
+								
+								<div class="carousel-item" data-item="ayes" data-type="2">
+									<div class="content-color" style="background-color: #9f5b47;"></div>
+								</div>
+								
+								<div class="carousel-item" data-item="ayes" data-type="3">
+									<div class="content-color" style="background-color: #746661;"></div>
+								</div>
+								
+								<div class="carousel-item" data-item="ayes" data-type="4">
+									<div class="content-color" style="background-color: #a46400;"></div>
+								</div>
+								
+								<div class="carousel-item" data-item="ayes" data-type="5">
+									<div class="content-color" style="background-color: #6a6867;"></div>
+								</div>
+								
+								<div class="carousel-item" data-item="ayes" data-type="6">
+									<div class="content-color" style="background-color: #607a3d;"></div>
+								</div>
+								
+							</div>
+
+							<div class="item content-items-hair">
+							
+								<div class="carousel-title">
+									<h3>Cabello</h3>
+								</div>
+							
+								<div class="carousel-item active" data-item="hair" data-type="1">
+									<div class="content-color" style="background-color: #da8d16;"></div>
+								</div>
+								
+								<div class="carousel-item" data-item="hair" data-type="2">
+									<div class="content-color" style="background-color: #4b4b4b;"></div>
+								</div>
+								
+								<div class="carousel-item" data-item="hair" data-type="3">
+									<div class="content-color" style="background-color: #bc5120;"></div>
+								</div>
+								
+								<div class="carousel-item" data-item="hair" data-type="4">
+									<div class="content-color" style="background-color: #ffd635;"></div>
+								</div>
+							
+							</div>
+
+						</div>
+
+						<a href="#" class="btn-carousel-create-story btn-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+						<a href="#" class="btn-carousel-create-story btn-right"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+
+					</div>
+
+					<div class="col-md-8">
+						
+						<div id="create-story-avatar">
+							<img src="./generate-image/script-avatar.php?type=girl&skin=1&eyes=1&hair=1" id="img-select-avatar" class="img-responsive">
 						</div>
 
 					</div>
-	
+		
 				</div>
-	
-				<div class="col-md-5">
+		
+				<div class="container-btn">
+		
+					<div class="row">
+		
+						<div class="col-md-6">
+		
+							<button type="button" class="btn btn-default btn-change-create-story" data-item="1"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Nombre</button>
+		
+						</div>
+		
+						<div class="col-md-6">
+		
+							<button type="button" class="btn btn-default btn-change-create-story" data-item="3">Dedicatoria <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button>
+		
+						</div>
+		
+					</div>
+		
+				</div>
+		
+			</div>
+		</section>
 
-					<div class="container-box box-photo">
-						<h2>¿Quieres añadir una foto?</h2>
-						<p class="subline">La foto aparecerá en la página de la dedicatoria.</p>
-						<button type="button" class="btn btn-default">Añadir foto</button>
-					</div>
-	
-					<div class="container-box">
-						<p>Revísala detenidamente para que no haya errores.</p>
-						<p>Una vez tu pedido pase a imprenta no se podrá modificar.</p>
-						<p>No nos hacemos responsables de posibles errores en la dedicatoria.</p>
-					</div>
-	
-				</div>
-	
-			</div>
-	
-			<div class="container-btn">
-	
+		<section class="create-story-block container-create-story-3">
+			<div class="container">
+		
 				<div class="row">
-	
-					<div class="col-md-6">
-	
-						<button type="button" class="btn btn-default btn-change-create-story" data-item="2"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Apariencia</button>
-	
+		
+					<div class="col-md-7">
+
+						<div class="container-box">
+
+							<div class="row">
+								<div class="col-md-12">
+							
+									<h2>Escribe tu dedicatoria</h2>
+									<p class="subline">Aparecerá en la última página</p>
+							
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-12">
+							
+									<div class="form-group">
+										<textarea class="form-control" name="dedication" placeholder="Nombre" rows="6">Éste es un cuento mágico para un niño especial como tú. Esperamos que vivas fantásticas aventuras rodeado de los que más te quieren.</textarea>
+									</div>
+							
+								</div>
+							</div>
+
+						</div>
+		
 					</div>
-	
-					<div class="col-md-6">
-	
-						<button type="button" class="btn btn-success btn-change-create-story" data-item="4">Crear cuento</button>
-	
+		
+					<div class="col-md-5">
+
+						<div class="container-box box-photo">
+							<h2>¿Quieres añadir una foto?</h2>
+							<p class="subline">La foto aparecerá en la página de la dedicatoria.</p>
+							<div id="upload-croppie"></div>
+							<input type="file" id="croppie-img-file" accept="image/*">
+							<button type="button" id="btn-croppie-file-add" class="btn btn-default">Añadir foto</button>
+							<button type="button" id="btn-croppie-file-accept" class="btn btn-default">Aceptar</button>
+						</div>
+		
+						<div class="container-box">
+							<p>Revísala detenidamente para que no haya errores.</p>
+							<p>Una vez tu pedido pase a imprenta no se podrá modificar.</p>
+							<p>No nos hacemos responsables de posibles errores en la dedicatoria.</p>
+						</div>
+		
 					</div>
-	
+		
 				</div>
-	
+		
+				<div class="container-btn">
+		
+					<div class="row">
+		
+						<div class="col-md-6">
+		
+							<button type="button" class="btn btn-default btn-change-create-story" data-item="5"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Apariencia</button>
+		
+						</div>
+		
+						<div class="col-md-6">
+		
+							<button type="submit" class="btn btn-success" data-item="4">Crear cuento</button>
+		
+						</div>
+		
+					</div>
+		
+				</div>
+		
 			</div>
-	
-		</div>
-	</section>
+		</section>
+
+	</form>
 
 </main>
 
@@ -482,6 +503,9 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.js"></script>
 
 <script type="text/javascript" src="./assets/js/bundle.min.js"></script>
 
