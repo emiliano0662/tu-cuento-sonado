@@ -250,14 +250,36 @@
             &.box-photo {
                 text-align: center;
 
-                .btn-default {
-                    border-color: #e54e40;
-                    background-color: #e54e40;
-                    font-size: 18px;
-                    color: #FFF;
-                    -webkit-border-radius: 30px;
-                    -moz-border-radius: 30px;
-                    border-radius: 30px;
+                .content-btn-box-photo {
+                    width: 100%;
+
+                    .btn-default {
+                        border-color: #e54e40;
+                        background-color: #e54e40;
+                        font-size: 18px;
+                        color: #FFF;
+                        -webkit-border-radius: 30px;
+                        -moz-border-radius: 30px;
+                        border-radius: 30px;
+                    }
+                    
+                    .btn-success {
+                        font-size: 18px;
+                        color: #FFF;
+                        -webkit-border-radius: 30px;
+                        -moz-border-radius: 30px;
+                        border-radius: 30px;
+                    }
+                }
+
+                #img-avatar-pre-select,
+                #btn-croppie-file-cancel,
+                #btn-croppie-file-accept {
+                    display: none;
+                }
+
+                #img-avatar-pre-select {
+                    margin-bottom: 25px;
                 }
             }
         }

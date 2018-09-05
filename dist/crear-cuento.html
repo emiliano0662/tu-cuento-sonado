@@ -126,7 +126,7 @@
 								<div class="col-md-12">
 
 									<div class="form-group">
-										<input type="text" class="form-control" id="name" placeholder="Nombre" data-validation="required" data-validation-error-msg="* Campo requerido">
+										<input type="text" class="form-control" id="name" name="name" placeholder="Nombre" data-validation="required" data-validation-error-msg="* Campo requerido">
 									</div>
 
 								</div>
@@ -406,9 +406,13 @@
 							<h2>¿Quieres añadir una foto?</h2>
 							<p class="subline">La foto aparecerá en la página de la dedicatoria.</p>
 							<div id="upload-croppie"></div>
+							<img src="" id="img-avatar-pre-select" class="img-responsive">
 							<input type="file" id="croppie-img-file" accept="image/*">
-							<button type="button" id="btn-croppie-file-add" class="btn btn-default">Añadir foto</button>
-							<button type="button" id="btn-croppie-file-accept" class="btn btn-default">Aceptar</button>
+							<div class="content-btn-box-photo">
+								<button type="button" id="btn-croppie-file-add" class="btn btn-default">Añadir foto</button>
+								<button type="button" id="btn-croppie-file-cancel" class="btn btn-default">Cancelar</button>
+								<button type="button" id="btn-croppie-file-accept" class="btn btn-success">Aceptar</button>
+							</div>
 						</div>
 		
 						<div class="container-box">

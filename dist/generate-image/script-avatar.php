@@ -1,5 +1,4 @@
 <?php
-
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
 $get_eyes = (empty($_GET['eyes']))? '1' : $_GET['eyes'];

@@ -80,21 +80,6 @@ $(document).ready(function() {
 
 	});
 
-	$("#form-crear-cuento").submit(function (event) {
-		event.preventDefault();
-
-		$.ajax({
-			cache: false,
-			type: $(this).attr("method"),
-			url: $(this).attr("action"),
-			data: $(this).serialize(),
-			success: function (data) {
-
-			}
-		});
-
-	});
-
 	$("#croppie-img-file").on('change', function (event) {
 		event.preventDefault();
 
@@ -116,6 +101,11 @@ $(document).ready(function() {
 				});
 
 				$("#upload-croppie").croppie('bind', image);
+
+				$("#btn-croppie-file-add").hide();
+				$("#img-avatar-pre-select").hide();
+				$("#btn-croppie-file-cancel").fadeIn();
+				$("#btn-croppie-file-accept").fadeIn();
 			}
 
 			reader.readAsDataURL(this.files[0]);
@@ -142,8 +132,50 @@ $(document).ready(function() {
 			size: 'viewport'
 		}).then(function (resp) {
 
+			$("#img-avatar-pre-select").attr('src', resp);	
+			$("#img-avatar-pre-select").fadeIn();
+
 			$("#hidden_croppie_img_file").val(resp);
 
+			$("#upload-croppie").croppie('destroy');
+
+			$("#btn-croppie-file-add").fadeIn();
+
+			$("#btn-croppie-file-cancel").hide();
+			$("#btn-croppie-file-accept").hide();
+
+		});
+
+	});
+
+	$("#btn-croppie-file-cancel").on('click', function (event) {
+		event.preventDefault();
+
+		$("#upload-croppie").croppie('destroy');
+
+		$("#hidden_croppie_img_file").val("");
+
+		$("#btn-croppie-file-add").fadeIn();
+
+		$("#img-avatar-pre-select").hide();		
+		$("#btn-croppie-file-cancel").hide();
+		$("#btn-croppie-file-accept").hide();
+
+	});
+
+	$("#form-crear-cuento").submit(function (event) {
+		event.preventDefault();
+
+		$.ajax({
+			cache: false,
+			type: $(this).attr("method"),
+			url: $(this).attr("action"),
+			data: $(this).serialize(),
+			success: function (data) {
+
+				console.log(data);
+
+			}
 		});
 
 	});

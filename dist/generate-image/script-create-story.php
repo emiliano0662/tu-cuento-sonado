@@ -1,43 +1,201 @@
-<?php
+<?php require('/fpdf/fpdf.php');
 
-$get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
-$get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
-$get_eyes = (empty($_GET['eyes']))? '1' : $_GET['eyes'];
-$get_hair = (empty($_GET['hair']))? '1' : $_GET['hair'];
+$get_skin = (empty($_POST['skin']))? '1' : $_POST['skin'];
+$get_eyes = (empty($_POST['eyes']))? '1' : $_POST['eyes'];
+$get_hair = (empty($_POST['hair']))? '1' : $_POST['hair'];
 
-$img = imagecreatetruecolor(230, 200);
+$get_gender = (empty($_POST['gender']))? 'girl' : $_POST['gender'];
 
-// Hacer que los canales alfa funcionen
-imagealphablending($img, true);
-imagesavealpha($img, true);
+$get_name = (empty($_POST['name']))? '' : $_POST['name'];
+$get_typography = (empty($_POST['typography']))? '1' : $_POST['typography'];
+$get_dedication = (empty($_POST['dedication']))? '' : $_POST['dedication'];
 
-$trans_bg = imagecolorallocatealpha($img, 0, 0, 0, 127);
+$img_user = (empty($_POST['hidden_croppie_img_file']))? NULL : $_POST['hidden_croppie_img_file'];
 
-imagefill($img, 0, 0, $trans_bg);
+if (!empty($img_user))  {
 
-// Cargar imagen Piel
-$cur_skin = imagecreatefrompng("./images/".$get_type."/skin/".$get_skin.".png");
-// Cargar imagen Ojos
-$cur_eyes = imagecreatefrompng("./images/".$get_type."/eyes/".$get_eyes.".png");
-// Cargar imagen Cabello
-$cur_hair = imagecreatefrompng("./images/".$get_type."/hair/".$get_hair.".png");
+    list($type, $img_user) = explode(';', $img_user);
+    list(, $img_user)      = explode(',', $img_user);
 
-// Copia sobre la imagen Piel
-imagecopy($img, $cur_skin, 0,0,0,0, 230, 200);
-// Copia sobre la imagen Ojos
-imagecopy($img, $cur_eyes, 0,0,0,0, 230, 200);
-// Copia sobre la imagen Cabello
-imagecopy($img, $cur_hair, 0,0,0,0, 230, 200);
+    $img_user = base64_decode($img_user);
 
-// Liberar memoria
-imagedestroy($cur_skin);
-imagedestroy($cur_eyes);
-imagedestroy($cur_hair);
+    $imageName = rand(0, 1000).date("YmdHis").".png";
+    
+    $destinationPath = dirname(__FILE__).'/assistant/imguser/';
 
-header('Content-Type: image/png');
+    file_put_contents($destinationPath.$imageName, $img_user);
 
-imagepng($img);
+    $img_user = $imageName;
+}
 
-imagedestroy($img);
+$code_image = rand(0, 1000).date("YmdHis");
+
+$image_create = imagecreatetruecolor(850,425);
+
+imagealphablending($image_create, true);
+imagesavealpha($image_create, true);
+
+
+// Imagen Fondo Uno
+$imagecreatefrompng = imagecreatefrompng("./images/background/1.png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Piel
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-1/skin/".$get_skin.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Ojos
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-1/eyes/".$get_eyes.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Cabello
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-1/hair/".$get_hair.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+imagepng($image_create, "./assistant/imgfinal/".$code_image."-page-1.png");
+
+imagedestroy($imagecreatefrompng);
+
+
+// Imagen Fondo Dos
+$imagecreatefrompng = imagecreatefrompng("./images/background/2.png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Piel
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-2/skin/".$get_skin.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Ojos
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-2/eyes/".$get_eyes.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Cabello
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-2/hair/".$get_hair.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+imagepng($image_create, "./assistant/imgfinal/".$code_image."-page-2.png");
+
+imagedestroy($imagecreatefrompng);
+
+
+// Imagen Fondo Tres
+$imagecreatefrompng = imagecreatefrompng("./images/background/3.png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Piel
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-3/skin/".$get_skin.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Ojos
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-3/eyes/".$get_eyes.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Cabello
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-3/hair/".$get_hair.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+imagepng($image_create, "./assistant/imgfinal/".$code_image."-page-3.png");
+
+imagedestroy($imagecreatefrompng);
+
+
+// Imagen Fondo Cuatro
+$imagecreatefrompng = imagecreatefrompng("./images/background/4.png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Piel
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-4/skin/".$get_skin.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Ojos
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-4/eyes/".$get_eyes.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Orejas
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-4/ear/".$get_skin.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Cabello
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-4/hair/".$get_hair.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+imagepng($image_create, "./assistant/imgfinal/".$code_image."-page-4.png");
+
+imagedestroy($imagecreatefrompng);
+
+
+// Imagen Fondo Cinco
+$imagecreatefrompng = imagecreatefrompng("./images/background/5.png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Piel
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-5/skin/".$get_skin.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Ojos
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-5/eyes/".$get_eyes.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Cabello
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-5/hair/".$get_hair.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+imagepng($image_create, "./assistant/imgfinal/".$code_image."-page-5.png");
+
+imagedestroy($imagecreatefrompng);
+
+
+// Imagen Fondo Seis
+$imagecreatefrompng = imagecreatefrompng("./images/background/6.png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Piel
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-6/skin/".$get_skin.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Ojos
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-6/eyes/".$get_eyes.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+// Imagen Cabello
+$imagecreatefrompng = imagecreatefrompng("./images/".$get_gender."/page-6/hair/".$get_hair.".png");
+imagecopy($image_create,$imagecreatefrompng,0,0,0,0,850,425);
+
+imagepng($image_create, "./assistant/imgfinal/".$code_image."-page-6.png");
+
+imagedestroy($imagecreatefrompng);
+
+
+$pdf = new FPDF();
+
+$pdf->AddPage('L',array(112,225),0);
+$pdf->Image("./assistant/imgfinal/".$code_image."-page-1.png",0,0,0,0,'PNG',false);
+
+$pdf->AddPage('L',array(112,225),0);
+$pdf->Image("./assistant/imgfinal/".$code_image."-page-2.png",0,0,0,0,'PNG',false);
+
+$pdf->AddPage('L',array(112,225),0);
+$pdf->Image("./assistant/imgfinal/".$code_image."-page-3.png",0,0,0,0,'PNG',false);
+
+$pdf->AddPage('L',array(112,225),0);
+$pdf->Image("./assistant/imgfinal/".$code_image."-page-4.png",0,0,0,0,'PNG',false);
+
+$pdf->AddPage('L',array(112,225),0);
+$pdf->Image("./assistant/imgfinal/".$code_image."-page-5.png",0,0,0,0,'PNG',false);
+
+$pdf->AddPage('L',array(112,225),0);
+$pdf->Image("./assistant/imgfinal/".$code_image."-page-6.png",0,0,0,0,'PNG',false);
+
+$pdf->Output("F","./pdf/".$code_image.".pdf",false);
+
+
+if (file_exists("./assistant/imgfinal/".$code_image."-page-1.png")) { unlink("./assistant/imgfinal/".$code_image."-page-1.png"); }
+if (file_exists("./assistant/imgfinal/".$code_image."-page-2.png")) { unlink("./assistant/imgfinal/".$code_image."-page-2.png"); }
+if (file_exists("./assistant/imgfinal/".$code_image."-page-3.png")) { unlink("./assistant/imgfinal/".$code_image."-page-3.png"); }
+if (file_exists("./assistant/imgfinal/".$code_image."-page-4.png")) { unlink("./assistant/imgfinal/".$code_image."-page-4.png"); }
+if (file_exists("./assistant/imgfinal/".$code_image."-page-5.png")) { unlink("./assistant/imgfinal/".$code_image."-page-5.png"); }
+if (file_exists("./assistant/imgfinal/".$code_image."-page-6.png")) { unlink("./assistant/imgfinal/".$code_image."-page-6.png"); }
+
+if (!empty($img_user)) { unlink("./assistant/imguser/".$img_user); }
 
 ?>
