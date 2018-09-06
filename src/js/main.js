@@ -166,6 +166,8 @@ $(document).ready(function() {
 	$("#form-crear-cuento").submit(function (event) {
 		event.preventDefault();
 
+		var $btn = $('#btn-crear-cuento').button('loading');
+
 		$.ajax({
 			cache: false,
 			type: $(this).attr("method"),
@@ -173,7 +175,33 @@ $(document).ready(function() {
 			data: $(this).serialize(),
 			success: function (data) {
 
-				console.log(data);
+				var element = document.createElement('a');
+				element.setAttribute('href', data);
+				element.setAttribute('target', '_blank');
+				element.setAttribute('download', 'tu-cuento-sonado');
+				element.style.display = 'none';
+				document.body.appendChild(element);
+				element.click();
+				document.body.removeChild(element);
+
+				$btn.button('reset');
+
+				$('#form-crear-cuento')[0].reset();
+
+				get_skin = 1;
+				$('#hidde_value_skin').val(1);
+				get_eyes = 1;
+				$('#hidde_value_eyes').val(1);
+				get_hair = 1;
+				$('#hidde_value_hair').val(1);
+
+				$("#img-select-avatar").attr("src", "./generate-image/script-avatar.php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair);
+
+				$("#img-avatar-pre-select").hide();	
+				$("#upload-croppie").croppie('destroy');
+
+				$(".create-story-block").hide();
+				$(".container-create-story-1").fadeIn();
 
 			}
 		});
