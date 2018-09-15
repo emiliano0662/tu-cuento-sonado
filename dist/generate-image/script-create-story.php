@@ -328,7 +328,7 @@ imagepng($image_create, "./assistant/imgfinal/".$code_image."-page-6.png");
 imagedestroy($imagecreatefrompng);
 
 
-$pdf = new PDF_TextBox();
+/*$pdf = new PDF_TextBox();
 $pdf->AddFont('Nunito-regular', '', 'Nunito-regular.php');
 $pdf->SetFont('Nunito-regular','',8);
 
@@ -353,18 +353,18 @@ $pdf->AddPage('L',array(112,225),0);
 $pdf->Image("./assistant/imgfinal/".$code_image."-page-6.png",0,0,0,0,'PNG',false);
 
 //$pdf->Output("F","./pdf/".$code_image.".pdf",false);
-$pdf->Output();
+$pdf->Output();*/
 
 
-if (file_exists("./assistant/imgfinal/".$code_image."-page-1.png")) { unlink("./assistant/imgfinal/".$code_image."-page-1.png"); }
+/*if (file_exists("./assistant/imgfinal/".$code_image."-page-1.png")) { unlink("./assistant/imgfinal/".$code_image."-page-1.png"); }
 if (file_exists("./assistant/imgfinal/".$code_image."-page-2.png")) { unlink("./assistant/imgfinal/".$code_image."-page-2.png"); }
 if (file_exists("./assistant/imgfinal/".$code_image."-page-3.png")) { unlink("./assistant/imgfinal/".$code_image."-page-3.png"); }
 if (file_exists("./assistant/imgfinal/".$code_image."-page-4.png")) { unlink("./assistant/imgfinal/".$code_image."-page-4.png"); }
 if (file_exists("./assistant/imgfinal/".$code_image."-page-5.png")) { unlink("./assistant/imgfinal/".$code_image."-page-5.png"); }
-if (file_exists("./assistant/imgfinal/".$code_image."-page-6.png")) { unlink("./assistant/imgfinal/".$code_image."-page-6.png"); }
+if (file_exists("./assistant/imgfinal/".$code_image."-page-6.png")) { unlink("./assistant/imgfinal/".$code_image."-page-6.png"); }*/
 
-if (!empty($img_user)) { unlink("./assistant/imguser/".$img_user); }
+/*if (!empty($img_user)) { unlink("./assistant/imguser/".$img_user); }
 
-echo "http://localhost/tu-cuento-sonado/dist/generate-image/pdf/".$code_image.".pdf";
+echo "http://localhost/tu-cuento-sonado/dist/generate-image/pdf/".$code_image.".pdf";*/
 
 ?>
