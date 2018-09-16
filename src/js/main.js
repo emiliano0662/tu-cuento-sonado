@@ -5,6 +5,49 @@ $(document).ready(function() {
 	var get_eyes = 1;
 	var get_hair = 1;
 
+	$('#bb-bookblock').bookblock();
+
+	$(".btn-bookblock-left").on('click', function (event) {
+		event.preventDefault();
+
+		$('#bb-bookblock').bookblock('prev');
+
+	});
+
+	$(".btn-bookblock-right").on('click', function (event) {
+		event.preventDefault();
+
+		$('#bb-bookblock').bookblock('next');
+
+	});
+
+	$(".img-bookblock").each(function (index) {
+
+		var count = index+1;
+		
+		$(this).attr("src", "./generate-image/script-create-image/page-"+count+".php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair);
+		
+	});
+
+	$(document).keydown(function (e) {
+		var keyCode = e.keyCode || e.which,
+			arrow = {
+				left: 37,
+				up: 38,
+				right: 39,
+				down: 40
+			};
+
+		switch (keyCode) {
+			case arrow.left:
+				$('#bb-bookblock').bookblock('prev');
+				break;
+			case arrow.right:
+				$('#bb-bookblock').bookblock('next');
+				break;
+		}
+	});
+
 	$.validate({
 		form: '#form-crear-cuento',
 	});
