@@ -5,8 +5,6 @@ $(document).ready(function() {
 	var get_eyes = 1;
 	var get_hair = 1;
 
-	$('#bb-bookblock').bookblock();
-
 	$(".btn-bookblock-left").on('click', function (event) {
 		event.preventDefault();
 
@@ -19,14 +17,6 @@ $(document).ready(function() {
 
 		$('#bb-bookblock').bookblock('next');
 
-	});
-
-	$(".img-bookblock").each(function (index) {
-
-		var count = index+1;
-		
-		$(this).attr("src", "./generate-image/script-create-image/page-"+count+".php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair);
-		
 	});
 
 	$(document).keydown(function (e) {
@@ -218,34 +208,47 @@ $(document).ready(function() {
 			data: $(this).serialize(),
 			success: function (data) {
 
-				var element = document.createElement('a');
+				/*var element = document.createElement('a');
 				element.setAttribute('href', data);
 				element.setAttribute('target', '_blank');
 				element.setAttribute('download', 'tu-cuento-sonado');
 				element.style.display = 'none';
 				document.body.appendChild(element);
 				element.click();
-				document.body.removeChild(element);
+				document.body.removeChild(element);*/
 
-				$btn.button('reset');
+				$(".img-bookblock").each(function (index) {
 
-				$('#form-crear-cuento')[0].reset();
+					var count = index + 1;
 
-				get_skin = 1;
-				$('#hidde_value_skin').val(1);
-				get_eyes = 1;
-				$('#hidde_value_eyes').val(1);
-				get_hair = 1;
-				$('#hidde_value_hair').val(1);
+					$(this).attr("src", "./generate-image/script-create-image/page-" + count + ".php?type=" + get_type + "&skin=" + get_skin + "&eyes=" + get_eyes + "&hair=" + get_hair);
 
-				$("#img-select-avatar").attr("src", "./generate-image/script-avatar.php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair);
+				});
 
-				$("#img-avatar-pre-select").hide();	
-				$("#upload-croppie").croppie('destroy');
+				setTimeout(function () {
 
-				$(".create-story-block").hide();
-				$(".container-create-story-1").fadeIn();
+					$btn.button('reset');
+					
+					$(".create-story-block").hide();
+					$(".container-create-story-4").fadeIn();
 
+					$('#bb-bookblock').bookblock();
+
+					$('#form-crear-cuento')[0].reset();
+	
+					get_skin = 1;
+					$('#hidde_value_skin').val(1);
+					get_eyes = 1;
+					$('#hidde_value_eyes').val(1);
+					get_hair = 1;
+					$('#hidde_value_hair').val(1);
+	
+					$("#img-select-avatar").attr("src", "./generate-image/script-avatar.php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair);
+	
+					$("#img-avatar-pre-select").hide();	
+					$("#upload-croppie").croppie('destroy');
+
+				}, 5000);
 			}
 		});
 
