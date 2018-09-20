@@ -1,4 +1,5 @@
-<?php
+<?php require('script-image-ttf-text-justified.php');
+
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
 $get_eyes = (empty($_GET['eyes']))? '1' : $_GET['eyes'];
@@ -32,8 +33,25 @@ imagecopy($img, $cur_eyes, 0,0,0,0, 850, 425);
 // Copia sobre la imagen Cabello
 imagecopy($img, $cur_hair, 0,0,0,0, 850, 425);
 
+//Texto
+$text_color = imagecolorallocate($img,0,0,0);
+
+$text_img = "En este bosque ahora no para la diversión, gracias a EMILIANO que logro con este nuevo juego \"corre, corre que te mojo\" que todos los animales del bosque pudieran jugar sin parar.";
+
+imagettftextjustified($img,10,0,518,30,$text_color,"../fonts/Neucha.ttf",$text_img,300,3,1.3);
+
+$text_img = "EMILIANO le recordo a sus amigos el gran valor de la amistad y lo importante que es ayudar a los demás.";
+
+imagettftextjustified($img,10,0,518,100,$text_color,"../fonts/Neucha.ttf",$text_img,300,3,1.3);
+
+$text_img = "¡Ahora que viva la diversión!";
+
+imagettftextjustified($img,10,0,665,145,$text_color,"../fonts/Neucha.ttf",$text_img,300,3,1.3);
+
 // Liberar memoria
+imagedestroy($cur_bg);
 imagedestroy($cur_skin);
+imagedestroy($cur_eyes);
 imagedestroy($cur_hair);
 
 header('Content-Type: image/png');

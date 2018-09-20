@@ -1,4 +1,5 @@
-<?php
+<?php require('script-image-ttf-text-justified.php');
+
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
 $get_eyes = (empty($_GET['eyes']))? '1' : $_GET['eyes'];
@@ -32,8 +33,17 @@ imagecopy($img, $cur_eyes, 0,0,0,0, 850, 425);
 // Copia sobre la imagen Cabello
 imagecopy($img, $cur_hair, 0,0,0,0, 850, 425);
 
+//Texto
+$text_color = imagecolorallocate($img,0,0,0);
+
+$text_img = "Una vez que Domt había llenado totalmente su trompa de agua, salió corriendo detrás del conejo, el sapo, la ardilla y Dinky para mojarlos.";
+
+imagettftextjustified($img,11,0,375,40,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+
 // Liberar memoria
+imagedestroy($cur_bg);
 imagedestroy($cur_skin);
+imagedestroy($cur_eyes);
 imagedestroy($cur_hair);
 
 header('Content-Type: image/png');

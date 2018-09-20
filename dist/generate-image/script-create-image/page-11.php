@@ -1,4 +1,5 @@
-<?php
+<?php require('script-image-ttf-text-justified.php');
+
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
 $get_eyes = (empty($_GET['eyes']))? '1' : $_GET['eyes'];
@@ -36,9 +37,19 @@ imagecopy($img, $cur_hair, 0,0,0,0, 850, 425);
 // Imagen Fondo index 1
 imagecopy($img, $cur_bg_index_1, 0,0,0,0,850,425);
 
+//Texto
+$text_color = imagecolorallocate($img,0,56,57);
+
+$text_img = "Cuando llegaron a aquel lugar, se dieron cuenta que una rama de un árbol se había incendiado y este había caído ocasionando que el conejo, la ardilla y el sapo quedaran atrapados, sin poder escapar del fuego.";
+
+imagettftextjustified($img,11,0,370,320,$text_color,"../fonts/Neucha.ttf",$text_img,300,3,1.3);
+
 // Liberar memoria
+imagedestroy($cur_bg);
 imagedestroy($cur_skin);
+imagedestroy($cur_eyes);
 imagedestroy($cur_hair);
+imagedestroy($cur_bg_index_1);
 
 header('Content-Type: image/png');
 

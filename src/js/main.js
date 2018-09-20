@@ -128,8 +128,8 @@ $(document).ready(function() {
 
 				$("#upload-croppie").croppie({
 					viewport: {
-						width: 150,
-						height: 150,
+						width: 136,
+						height: 168,
 					}
 				});
 

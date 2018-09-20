@@ -32,7 +32,13 @@ imagecopy($img, $cur_eyes, 0,0,0,0, 850, 425);
 // Copia sobre la imagen Cabello
 imagecopy($img, $cur_hair, 0,0,0,0, 850, 425);
 
+//Texto
+$text_color = imagecolorallocate($img,115,32,34);
+
+imagettftext($img,14,0,495,170,$text_color,"../fonts/Neucha.ttf","!Hola, soy\nEMILIANO!");
+
 // Liberar memoria
+imagedestroy($cur_bg);
 imagedestroy($cur_skin);
 imagedestroy($cur_eyes);
 imagedestroy($cur_hair);

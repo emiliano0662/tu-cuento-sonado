@@ -1,4 +1,5 @@
-<?php
+<?php require('script-image-ttf-text-justified.php');
+
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
 $get_eyes = (empty($_GET['eyes']))? '1' : $_GET['eyes'];
@@ -36,10 +37,19 @@ imagecopy($img, $cur_hair, 0,0,0,0, 850, 425);
 // Imagen Fondo
 imagecopy($img, $cur_bg_index_1, 0,0,0,0,850,425);
 
+//Texto
+$text_color = imagecolorallocate($img,27,66,44);
+
+$text_img = "EMILIANO tenía un gran poder, el poder de hablar con los animales del bosque.";
+
+imagettftextjustified($img,14,0,550,280,$text_color,"../fonts/Neucha.ttf",$text_img,230,3,1.3);
+
 // Liberar memoria
+imagedestroy($cur_bg);
 imagedestroy($cur_skin);
 imagedestroy($cur_eyes);
 imagedestroy($cur_hair);
+imagedestroy($cur_bg_index_1);
 
 header('Content-Type: image/png');
 

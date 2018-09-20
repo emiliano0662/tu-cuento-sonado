@@ -1,4 +1,5 @@
-<?php
+<?php require('script-image-ttf-text-justified.php');
+
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
 $get_eyes = (empty($_GET['eyes']))? '1' : $_GET['eyes'];
@@ -32,7 +33,27 @@ imagecopy($img, $cur_eyes, 0,0,0,0, 850, 425);
 // Copia sobre la imagen Cabello
 imagecopy($img, $cur_hair, 0,0,0,0, 850, 425);
 
+//Texto
+$text_color = imagecolorallocate($img,43,37,79);
+
+$text_img = "Buscando el sonido de aquel llanto, encontraron a un pequeño elefante que se llamab domt.";
+
+imagettftextjustified($img,11,0,40,50,$text_color,"../fonts/Neucha.ttf",$text_img,260,3,1.3);
+
+$text_img = "EMILIANO le pregunta:";
+
+imagettftextjustified($img,11,0,40,110,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+
+$text_img = "- Domt ¿Por qué estas llorando?";
+
+imagettftextjustified($img,11,0,40,130,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+
+$text_img = "Lloro porque la ardilla, el sapo y el conejo estaban jugando a las escondidas en el bosque, pero por mi gran tamaño no se me hace fácil buscar un escondite; y ellos no quisieron jugar conmigo.";
+
+imagettftextjustified($img,11,0,150,165,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+
 // Liberar memoria
+imagedestroy($cur_bg);
 imagedestroy($cur_skin);
 imagedestroy($cur_eyes);
 imagedestroy($cur_hair);
