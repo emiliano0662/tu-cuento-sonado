@@ -1,4 +1,9 @@
-<?php require('script-image-ttf-text-justified.php');
+<?php session_start();
+
+$_name = (empty($_SESSION['name']))? '' : $_SESSION['name'];
+$_typography = (empty($_SESSION['typography']))? NULL : $_SESSION['typography'];
+
+require('script-image-ttf-text-justified.php');
 
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
@@ -36,9 +41,9 @@ imagecopy($img, $cur_hair, 0,0,0,0, 850, 425);
 //Texto
 $text_color = imagecolorallocate($img,0,0,0);
 
-$text_img = "En un bosque cerca de un hermoso lago, había una gran casa de madera, donde vivía una persona muy especial que se llamaba EMILIANO, junto a su familia y su gran amigo Dinky, un pequeño perrito con quien jugaba y se divertía todo el día.";
+$text_img = "En un bosque cerca de un hermoso lago, había una gran casa de madera, donde vivía una persona muy especial que se llamaba ".$_name.", junto a su familia y su gran amigo Dinky, un pequeño perrito con quien jugaba y se divertía todo el día.";
 
-imagettftextjustified($img,11,0,110,250,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+imagettftextjustified($img,11,0,110,250,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),280,3,1.3);
 
 // Liberar memoria
 imagedestroy($cur_bg);

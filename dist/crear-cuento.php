@@ -129,7 +129,7 @@
 								<div class="col-md-12">
 
 									<div class="form-group">
-										<input type="text" class="form-control" id="name" name="name" placeholder="Nombre" data-validation="required" data-validation-error-msg="* Campo requerido">
+										<input type="text" class="form-control" id="name" name="name" placeholder="Nombre" data-validation="required" data-validation-error-msg="* Campo requerido" maxlength="11" value="<?=(empty($_POST['home_name']))? '' : strtolower($_POST['home_name'])?>">
 									</div>
 
 								</div>
@@ -535,7 +535,7 @@
 		
 						<div class="col-md-6">
 		
-							<a href="./crear-cuento.html" class="btn btn-danger">Regresar</a>
+							<a href="./crear-cuento.php" class="btn btn-danger">Regresar</a>
 		
 						</div>
 		
@@ -575,7 +575,7 @@
 
 				<div class="col-xs-12 col-sm-6 col-md-4">
 					
-					<a href="crear-cuento.html" target="_self" class="btn btn-default">Crear Cuento</a>
+					<a href="crear-cuento.php" target="_self" class="btn btn-default">Crear Cuento</a>
 
 				</div>
 

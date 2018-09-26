@@ -1,4 +1,9 @@
-<?php require('script-image-ttf-text-justified.php');
+<?php session_start();
+
+$_name = (empty($_SESSION['name']))? '' : $_SESSION['name'];
+$_typography = (empty($_SESSION['typography']))? NULL : $_SESSION['typography'];
+
+require('script-image-ttf-text-justified.php');
 
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
@@ -36,21 +41,21 @@ imagecopy($img, $cur_hair, 0,0,0,0, 850, 425);
 //Texto
 $text_color = imagecolorallocate($img,0,0,0);
 
-$text_img = "La ardilla, el sapo y el conejo estaban muy agradecidos con EMILIANO y Domt.";
+$text_img = "La ardilla, el sapo y el conejo estaban muy agradecidos con ".$_name." y Domt.";
 
-imagettftextjustified($img,11,0,40,50,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+imagettftextjustified($img,10,0,35,35,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),280,3,1.3);
 
-$text_img = "Pero a EMILIANO se le había ocurrido una gran idea para que Domt jugara con sus amigos.";
+$text_img = "Pero a ".$_name." se le había ocurrido una gran idea para que Domt jugara con sus amigos.";
 
-imagettftextjustified($img,11,0,40,110,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+imagettftextjustified($img,10,0,35,74,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),280,3,1.3);
 
-$text_img = "EMILIANO se aproximó y se subió aobre la espalda de Domt y acercándose al oído le susurró:";
+$text_img = $_name." se aproximó y se subió aobre la espalda de Domt y acercándose al oído le susurró:";
 
-imagettftextjustified($img,11,0,450,300,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+imagettftextjustified($img,10,0,450,300,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),280,3,1.3);
 
 $text_img = "- Vamos al lago a llenar tu trompa de agua...";
 
-imagettftextjustified($img,11,0,450,360,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+imagettftextjustified($img,10,0,450,360,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),280,3,1.3);
 
 // Liberar memoria
 imagedestroy($cur_bg);

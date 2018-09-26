@@ -1,4 +1,8 @@
-<?php require('script-image-ttf-text-justified.php');
+<?php session_start();
+
+$_typography = (empty($_SESSION['typography']))? NULL : $_SESSION['typography'];
+
+require('script-image-ttf-text-justified.php');
 
 $img = imagecreatetruecolor(850, 425);
 
@@ -21,7 +25,7 @@ $text_color = imagecolorallocate($img,103,55,0);
 
 $text_img = "Ahora juguemos a las escondidas con los animales del bosque... cuenta hasta 3 y encuéntralos.";
 
-imagettftextjustified($img,12,0,200,105,$text_color,"../fonts/Neucha.ttf",$text_img,200,3,1.3);
+imagettftextjustified($img,12,0,200,105,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),200,3,1.3);
 
 // Liberar memoria
 imagedestroy($cur_bg);

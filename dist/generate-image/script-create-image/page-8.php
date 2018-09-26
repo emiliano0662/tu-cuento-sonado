@@ -1,4 +1,9 @@
-<?php require('script-image-ttf-text-justified.php');
+<?php session_start();
+
+$_name = (empty($_SESSION['name']))? '' : $_SESSION['name'];
+$_typography = (empty($_SESSION['typography']))? NULL : $_SESSION['typography'];
+
+require('script-image-ttf-text-justified.php');
 
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
@@ -38,19 +43,19 @@ $text_color = imagecolorallocate($img,43,37,79);
 
 $text_img = "Buscando el sonido de aquel llanto, encontraron a un pequeño elefante que se llamab domt.";
 
-imagettftextjustified($img,11,0,40,50,$text_color,"../fonts/Neucha.ttf",$text_img,260,3,1.3);
+imagettftextjustified($img,10,0,40,40,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),260,3,1.3);
 
-$text_img = "EMILIANO le pregunta:";
+$text_img = $_name." le pregunta:";
 
-imagettftextjustified($img,11,0,40,110,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+imagettftextjustified($img,10,0,40,99,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),280,3,1.3);
 
 $text_img = "- Domt ¿Por qué estas llorando?";
 
-imagettftextjustified($img,11,0,40,130,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+imagettftextjustified($img,10,0,40,123,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),280,3,1.3);
 
 $text_img = "Lloro porque la ardilla, el sapo y el conejo estaban jugando a las escondidas en el bosque, pero por mi gran tamaño no se me hace fácil buscar un escondite; y ellos no quisieron jugar conmigo.";
 
-imagettftextjustified($img,11,0,150,165,$text_color,"../fonts/Neucha.ttf",$text_img,280,3,1.3);
+imagettftextjustified($img,10,0,110,168,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),280,3,1.3);
 
 // Liberar memoria
 imagedestroy($cur_bg);

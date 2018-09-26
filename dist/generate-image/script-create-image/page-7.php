@@ -1,4 +1,9 @@
-<?php require('script-image-ttf-text-justified.php');
+<?php session_start();
+
+$_name = (empty($_SESSION['name']))? '' : $_SESSION['name'];
+$_typography = (empty($_SESSION['typography']))? NULL : $_SESSION['typography'];
+
+require('script-image-ttf-text-justified.php');
 
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
@@ -41,21 +46,21 @@ imagecopy($img, $cur_bg_index_1, 0,0,0,0,850,425);
 $text_color = imagecolorallocate($img,255,255,255);
 
 
-$text_img = "Cuando EMILIANO y Dinky iban pasando por un gran árbol. Dinky escuchó que alquien lloraba y preguntó.";
+$text_img = "Cuando ".$_name." y Dinky iban pasando por un gran árbol. Dinky escuchó que alquien lloraba y preguntó.";
 
-imagettftextjustified($img,10,0,20,250,$text_color,"../fonts/Neucha.ttf",$text_img,210,3,1.3);
+imagettftextjustified($img,10,0,20,250,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),210,3,1.3);
 
 
-$text_img = "- EMILIANO, ¿quién está llorando?";
+$text_img = "- ".$_name.", ¿quién está llorando?";
 
-imagettftextjustified($img,10,0,20,310,$text_color,"../fonts/Neucha.ttf",$text_img,220,3,1.3);
+imagettftextjustified($img,10,0,20,310,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),220,3,1.3);
 
 
 $text_color = imagecolorallocate($img,43,37,79);
 
-$text_img = "Ven Dinjy vamos a buscar quien llora.";
+$text_img = "Ven Dinky vamos a buscar quien llora.";
 
-imagettftextjustified($img,11,0,690,55,$text_color,"../fonts/Neucha.ttf",$text_img,107,3,1.3);
+imagettftextjustified($img,11,0,690,50,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),107,3,1.3);
 
 // Liberar memoria
 imagedestroy($cur_bg);

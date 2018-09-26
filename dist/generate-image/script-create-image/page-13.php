@@ -1,4 +1,9 @@
-<?php require('script-image-ttf-text-justified.php');
+<?php session_start();
+
+$_name = (empty($_SESSION['name']))? '' : $_SESSION['name'];
+$_typography = (empty($_SESSION['typography']))? NULL : $_SESSION['typography'];
+
+require('script-image-ttf-text-justified.php');
 
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
@@ -36,21 +41,21 @@ imagecopy($img, $cur_hair, 0,0,0,0, 850, 425);
 //Texto
 $text_color = imagecolorallocate($img,0,0,0);
 
-$text_img = "EMILIANO era muy listo y se le ocurrió una gran idea.";
+$text_img = $_name." era muy listo y se le ocurrió una gran idea.";
 
-imagettftextjustified($img,10,0,270,20,$text_color,"../fonts/Neucha.ttf",$text_img,180,3,1.3);
+imagettftextjustified($img,10,0,270,20,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),180,3,1.3);
 
 $text_img = "SE subío sobre la espalda de Domt y lo llevo hasta un lago que se encontraba cerca, y le dijo:";
 
-imagettftextjustified($img,10,0,270,53,$text_color,"../fonts/Neucha.ttf",$text_img,180,3,1.3);
+imagettftextjustified($img,10,0,270,53,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),180,3,1.3);
 
 $text_img = "Dom llena tu trompa de agua, y así podremos apagar el fuego.";
 
-imagettftextjustified($img,9,0,285,140,$text_color,"../fonts/Neucha.ttf",$text_img,75,3,1.3);
+imagettftextjustified($img,9,0,296,((empty($_typography))? 140 : 130),$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),75,3,1.3);
 
 $text_img = "Así lo hicieron una y otra vez. Domt llenaba su trompa de agua y la vertía sobre el fuego, hasta que logró apagarlo.";
 
-imagettftextjustified($img,9,0,560,90,$text_color,"../fonts/Neucha.ttf",$text_img,250,3,1.3);
+imagettftextjustified($img,9,0,((empty($_typography))? 555 : 568),((empty($_typography))? 89 : 86),$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),250,3,1.3);
 
 // Liberar memoria
 imagedestroy($cur_bg);

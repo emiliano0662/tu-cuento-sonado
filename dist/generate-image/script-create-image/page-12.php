@@ -1,4 +1,9 @@
-<?php require('script-image-ttf-text-justified.php');
+<?php session_start();
+
+$_name = (empty($_SESSION['name']))? '' : $_SESSION['name'];
+$_typography = (empty($_SESSION['typography']))? NULL : $_SESSION['typography'];
+
+require('script-image-ttf-text-justified.php');
 
 $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
@@ -40,13 +45,13 @@ imagecopy($img, $cur_bg_index_1, 0,0,0,0,850,425);
 //Texto
 $text_color = imagecolorallocate($img,255,255,255);
 
-$text_img = "EMILIANO les gritaba:";
+$text_img = $_name." les gritaba:";
 
-imagettftextjustified($img,11,0,20,100,$text_color,"../fonts/Neucha.ttf",$text_img,160,3,1.3);
+imagettftextjustified($img,11,0,20,100,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),160,3,1.3);
 
 $text_img = "- Amigos aléjense del fuego lo que más puedan. Los vamos a ayudar.";
 
-imagettftextjustified($img,11,0,20,150,$text_color,"../fonts/Neucha.ttf",$text_img,160,3,1.3);
+imagettftextjustified($img,11,0,20,150,$text_color,"../fonts/Neucha.ttf",((empty($_typography))? $text_img : strtoupper($text_img)),160,3,1.3);
 
 // Liberar memoria
 imagedestroy($cur_bg);
