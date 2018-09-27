@@ -64,7 +64,7 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 							<li>
-								<a href="index.html" class="active">Inicio</a>
+								<a href="index.html">Inicio</a>
 							</li>
 							<li>
 								<a href="index.html">Como funciona</a>
@@ -73,13 +73,13 @@
 								<a href="index.html">Opiniones</a>
 							</li>
 							<li>
-								<a href="index.html">Preguntas frecuentes</a>
+								<a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
 							</li>
 							<li>
 								<a href="index.html">Nuestros cuentos</a>
 							</li>
 							<li>
-								<a href="index.html">Como es</a>
+								<a href="index.html">Como son</a>
 							</li>
 							<li>
 								<a href="index.html">Contacto</a>
@@ -120,7 +120,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									
-									<h2>¿Cómo se llama el prota?</h2>
+									<h2>Nombre del protagonista</h2>
 
 								</div>
 							</div>
@@ -235,7 +235,7 @@
 						
 						<div class="col-md-6">
 								
-							<button type="button" class="btn btn-default btn-change-create-story" data-item="2">Apariencia <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button>
+							<button type="button" class="btn btn-default btn-change-create-story" data-item="2">Ahora dale vida a tu protagonista <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button>
 							
 						</div>
 						
@@ -383,8 +383,8 @@
 							<div class="row">
 								<div class="col-md-12">
 							
-									<h2>Escribe tu dedicatoria</h2>
-									<p class="subline">Aparecerá en la última página</p>
+									<h2>¿Que le quieres decir al protagonista?</h2>
+									<p class="subline">Esta es una plantilla estándar que puedes modificar</p>
 							
 								</div>
 							</div>
@@ -406,8 +406,8 @@
 					<div class="col-md-5">
 
 						<div class="container-box box-photo">
-							<h2>¿Quieres añadir una foto?</h2>
-							<p class="subline">La foto aparecerá en la página de la dedicatoria.</p>
+							<h2>¿Deseas agregar una foto del niño(a)?</h2>
+							<p class="subline">Esta foto permitirá que el niño(a) se identifique dentro de la historia.</p>
 							<div id="upload-croppie"></div>
 							<img src="" id="img-avatar-pre-select" class="img-responsive">
 							<input type="file" id="croppie-img-file" accept="image/*">
@@ -419,9 +419,7 @@
 						</div>
 		
 						<div class="container-box">
-							<p>Revísala detenidamente para que no haya errores.</p>
-							<p>Una vez tu pedido pase a imprenta no se podrá modificar.</p>
-							<p>No nos hacemos responsables de posibles errores en la dedicatoria.</p>
+							<p>Colorín colorado este hermoso cuento a finalizado…una vez más revisa detenidamente que tu dedicatoria no presente errores y así dar por terminado este bonito proyecto. Ahora puedes continuar con el proceso de compra y muy pronto te lo llevaremos a casa.</p>
 						</div>
 		
 					</div>
@@ -440,7 +438,7 @@
 		
 						<div class="col-md-6">
 		
-							<button type="submit" id="btn-crear-cuento" class="btn btn-success" data-loading-text="Cargando..." data-item="4">Crear cuento</button>
+							<button type="submit" id="btn-crear-cuento" class="btn btn-success" data-loading-text="Cargando..." data-item="4">Crea tu cuento</button>
 		
 						</div>
 		
@@ -575,7 +573,7 @@
 
 				<div class="col-xs-12 col-sm-6 col-md-4">
 					
-					<a href="crear-cuento.php" target="_self" class="btn btn-default">Crear Cuento</a>
+					<a href="crear-cuento.php" target="_self" class="btn btn-default">Crea tu cuento</a>
 
 				</div>
 
