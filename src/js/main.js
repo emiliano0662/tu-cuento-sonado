@@ -304,6 +304,15 @@ $(document).ready(function() {
 		owl_carousel_create_story.trigger('next.owl.carousel');
 	});
 
+	$(".btn-link-main").on('click', function (event) {
+		event.preventDefault();
+
+		var seccion = $(this).data('seccion');
+
+		$('body,html').animate({ scrollTop: $(seccion).offset().top }, 1000, 'swing');
+
+	});
+
 	$("[data-dinaanim]").each(function () {
 
 		var $this = $(this);

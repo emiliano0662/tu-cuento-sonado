@@ -548,7 +548,7 @@
 
 </main>
 
-<footer>
+<footer id="contacto">
 
 	<div class="footer-body">
 

@@ -484,6 +484,70 @@
     }
 }
 
+.home-block-5 {
+    margin-bottom: 10px;
+    padding: 70px 0px 50px 0px;
+    text-align: center;
+
+    h1 {
+        margin: 0px 0px 5px 0px;
+        font-weight: 700;
+        font-size: 50px;
+        color: #000;
+    }
+}
+
+.home-block-6 {
+    padding-bottom: 70px;
+
+    .content-list {
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        
+        h2 {
+            margin: 0px 0px 20px 0px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 25px;
+            color: #00a1ff;
+        }
+        
+        p {
+            margin: 0px 0px 15px 0px;
+            text-align: justify;
+            line-height: 25px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 20px;
+            color: #000;
+        }
+
+        ul {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            list-style: none;
+
+            li {
+                margin-bottom: 10px;
+                text-align: justify;
+                line-height: 25px;
+                font-family: 'Nunito', sans-serif;
+                font-size: 20px;
+                color: #000;
+
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+}
+
+
 @media  (min-width: $screen-md) and (max-width: $screen-lg) {
 
     .home-block-banner {
