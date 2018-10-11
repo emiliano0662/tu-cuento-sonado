@@ -1,0 +1,94 @@
+.order-cart-block {
+    padding-bottom: 40px;
+
+    .container-box {
+        margin-bottom: 40px;
+        padding: 25px 30px;
+        background-color: #fff;
+        box-shadow: 0 0 0 4px rgba(0,0,0,0.1);
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    
+    .col-md-4 {
+        
+        h2 {
+            margin: 0px 0px 12px 0px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 25px;
+            color: #666;
+        }
+
+        .btn-danger {
+            width: 100%;
+            padding: 0px 25px;
+            margin-bottom: 5px;
+            border: 0px;
+            line-height: 48px;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 16px;
+            color: #fff;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            border-color: #e54e40;
+            background-color: #e54e40;
+        }
+        
+        .container-box {
+
+            table {
+                width: 100%;
+
+                thead {
+
+                    tr {
+
+                        th {
+                            width: 50%;
+                            padding: 5px 10px;
+                            color: #666;
+
+                            span {
+                                font-size: 25px;
+                                color: #f36563;
+                            }
+
+                            &:first-child {
+                                border-right: 2px solid #f0f0f0;
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+    
+                    tr {
+                        border-top: 2px solid #f0f0f0;
+
+                        td {
+                            width: 50%;
+                            padding: 5px 10px;
+                            color: #666;
+
+                            span {
+                                font-weight: 700;
+                                font-size: 25px;
+                                color: #f36563;
+                            }
+
+                            &:first-child {
+                                border-right: 2px solid #f0f0f0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
