@@ -103,7 +103,7 @@
 			<div class="row">
 				<div class="col-md-12">
 
-					<h1>Tu carrito</h1>
+					<h1>Realizar pedido</h1>
 
 				</div>
 			</div>
@@ -120,52 +120,157 @@
 				
 					<div class="container-box">
 
-						<div class="row">
+						<form action="" method="POST">
 
-							<div class="col-xs-12 col-sm-3 col-md-3">
-								<img src="./generate-image/script-avatar.php?type=boy&skin=1&eyes=1&hair=1" class="img-responsive">
+							<div class="row">
+								<div class="col-md-12">
+							
+									<div class="form-group">
+										<h5>Tus datos</h5>
+									</div>
+							
+								</div>
 							</div>
 
-							<div class="col-xs-12 col-sm-5 col-md-5">
+							<div class="row">
 
-								<h2>Planeta Gelatina</h2>
-								<p>Emiliano</p>
-								<small class="label label-danger">Sin foto</small>
+								<div class="col-md-6">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="name" placeholder="Tu nombre">
+									</div>
+
+								</div>
+
+								<div class="col-md-6">
+								
+									<div class="form-group">
+										<input type="text" class="form-control" name="surname" placeholder="Tus apellidos">
+									</div>
+								
+								</div>
+
+							</div>
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<div class="form-group">
+										<input type="email" class="form-control" name="email" placeholder="Tu email">
+									</div>
+
+								</div>
+							</div>
+
+							<div class="row"><div class="col-md-12"><hr></div></div>
+
+							<div class="row">
+								<div class="col-md-12">
+							
+									<div class="form-group">
+										<h5>¿A quién se lo enviamos?</h5>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="row">
+							
+								<div class="col-md-6">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="send_name" placeholder="Nombre">
+									</div>
+							
+								</div>
+							
+								<div class="col-md-6">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="send_surname" placeholder="Apellidos">
+									</div>
+							
+								</div>
 							
 							</div>
 
-							<div class="col-xs-12 col-sm-4 col-md-4">
-
-								<h3>$32.00</h3>
-								<a href="./crear-cuento.php" target="_self">Editar opciones</a>
-
+							<div class="row">
+							
+								<div class="col-md-6">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="send_address_street" placeholder="Calle y numero">
+									</div>
+							
+								</div>
+							
+								<div class="col-md-6">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="send_address_floor" placeholder="Piso y puerta">
+									</div>
+							
+								</div>
+							
 							</div>
-
-						</div>
-
-					</div>
-
-					<h2 class="subtitle">Opciones de envío</h2>
-
-					<div class="container-box delivery-time">
-
-						<div class="content">
 
 							<div class="row">
-								
-								<div class="col-xs-12 col-sm-7 col-md-7">
-									<p>Tiempo de entrega estimado<br><b>8 - 12 días</b></p>
+								<div class="col-md-12">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="send_company" placeholder="Empresa">
+									</div>
+							
 								</div>
-								
-								<div class="col-xs-12 col-sm-5 col-md-5">
-									<p>Envío<br><b>$3.00</b></p>
-								</div>
-								
 							</div>
-						
-						</div>
+
+							<div class="row">
+							
+								<div class="col-md-6">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="send_postal_code" placeholder="Código postal">
+									</div>
+							
+								</div>
+							
+								<div class="col-md-6">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="send_location" placeholder="Localidad">
+									</div>
+							
+								</div>
+							
+							</div>
+
+							<div class="row">
+								<div class="col-md-12">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="send_phone" placeholder="Teléfono (para temas de entrega)">
+									</div>
+							
+								</div>
+							</div>
+
+							<div class="row"><div class="col-md-12"><hr></div></div>
+
+							<div class="row">
+								<div class="col-md-12">
+
+									<div class="checkbox">
+										<label><input type="checkbox"> He leído y acepto la política de privacidad ( <a href="" target="_self">link</a> )</label>
+									</div>
+
+								</div>
+							</div>
+
+						</form>
 
 					</div>
+
+					<a href="" target="_self" class="btn btn-danger">CONTINUAR</a>
 
 				</div>
 
@@ -207,8 +312,6 @@
 						</table>
 
 					</div>
-
-					<a href="" target="_self" class="btn btn-danger">REALIZAR PEDIDO</a>
 				
 				</div>
 
