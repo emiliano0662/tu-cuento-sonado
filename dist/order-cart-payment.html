@@ -120,7 +120,7 @@
 				
 					<div class="container-box">
 
-						<form action="" method="POST">
+						<form action="./generate-image/script-cart-payment.php" method="POST" id="form-order-cart-payment">
 
 							<div class="row">
 								<div class="col-md-12">
@@ -137,7 +137,7 @@
 								<div class="col-md-6">
 							
 									<div class="form-group">
-										<input type="text" class="form-control" name="name" placeholder="Tu nombre">
+										<input type="text" class="form-control" name="name" placeholder="Tu nombre" data-validation="required" data-validation-error-msg="* Campo requerido">
 									</div>
 
 								</div>
@@ -145,7 +145,7 @@
 								<div class="col-md-6">
 								
 									<div class="form-group">
-										<input type="text" class="form-control" name="surname" placeholder="Tus apellidos">
+										<input type="text" class="form-control" name="surname" placeholder="Tus apellidos" data-validation="required" data-validation-error-msg="* Campo requerido">
 									</div>
 								
 								</div>
@@ -156,7 +156,7 @@
 								<div class="col-md-12">
 
 									<div class="form-group">
-										<input type="email" class="form-control" name="email" placeholder="Tu email">
+										<input type="email" class="form-control" name="email" placeholder="Tu email" data-validation="required" data-validation-error-msg="* Campo requerido">
 									</div>
 
 								</div>
@@ -179,7 +179,7 @@
 								<div class="col-md-6">
 							
 									<div class="form-group">
-										<input type="text" class="form-control" name="send_name" placeholder="Nombre">
+										<input type="text" class="form-control" name="send_name" placeholder="Nombre" data-validation="required" data-validation-error-msg="* Campo requerido">
 									</div>
 							
 								</div>
@@ -187,7 +187,7 @@
 								<div class="col-md-6">
 							
 									<div class="form-group">
-										<input type="text" class="form-control" name="send_surname" placeholder="Apellidos">
+										<input type="text" class="form-control" name="send_surname" placeholder="Apellidos" data-validation="required" data-validation-error-msg="* Campo requerido">
 									</div>
 							
 								</div>
@@ -199,7 +199,7 @@
 								<div class="col-md-6">
 							
 									<div class="form-group">
-										<input type="text" class="form-control" name="send_address_street" placeholder="Calle y numero">
+										<input type="text" class="form-control" name="send_address_street" placeholder="Calle y numero" data-validation="required" data-validation-error-msg="* Campo requerido">
 									</div>
 							
 								</div>
@@ -207,37 +207,7 @@
 								<div class="col-md-6">
 							
 									<div class="form-group">
-										<input type="text" class="form-control" name="send_address_floor" placeholder="Piso y puerta">
-									</div>
-							
-								</div>
-							
-							</div>
-
-							<div class="row">
-								<div class="col-md-12">
-							
-									<div class="form-group">
-										<input type="text" class="form-control" name="send_company" placeholder="Empresa">
-									</div>
-							
-								</div>
-							</div>
-
-							<div class="row">
-							
-								<div class="col-md-6">
-							
-									<div class="form-group">
-										<input type="text" class="form-control" name="send_postal_code" placeholder="Código postal">
-									</div>
-							
-								</div>
-							
-								<div class="col-md-6">
-							
-									<div class="form-group">
-										<input type="text" class="form-control" name="send_location" placeholder="Localidad">
+										<input type="text" class="form-control" name="send_address_floor" placeholder="Piso y puerta" data-validation="required" data-validation-error-msg="* Campo requerido">
 									</div>
 							
 								</div>
@@ -248,7 +218,37 @@
 								<div class="col-md-12">
 							
 									<div class="form-group">
-										<input type="text" class="form-control" name="send_phone" placeholder="Teléfono (para temas de entrega)">
+										<input type="text" class="form-control" name="send_company" placeholder="Empresa" data-validation="required" data-validation-error-msg="* Campo requerido">
+									</div>
+							
+								</div>
+							</div>
+
+							<div class="row">
+							
+								<div class="col-md-6">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="send_postal_code" placeholder="Código postal" data-validation="required" data-validation-error-msg="* Campo requerido">
+									</div>
+							
+								</div>
+							
+								<div class="col-md-6">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="send_location" placeholder="Localidad" data-validation="required" data-validation-error-msg="* Campo requerido">
+									</div>
+							
+								</div>
+							
+							</div>
+
+							<div class="row">
+								<div class="col-md-12">
+							
+									<div class="form-group">
+										<input type="text" class="form-control" name="send_phone" placeholder="Teléfono (para temas de entrega)" data-validation="required" data-validation-error-msg="* Campo requerido">
 									</div>
 							
 								</div>
@@ -260,7 +260,7 @@
 								<div class="col-md-12">
 
 									<div class="checkbox">
-										<label><input type="checkbox"> He leído y acepto la política de privacidad ( <a href="" target="_self">link</a> )</label>
+										<label><input type="checkbox" name="send_checkbox" data-validation="required" data-validation-error-msg="* Campo requerido"> He leído y acepto la política de privacidad ( <a href="" target="_self">link</a> )</label>
 									</div>
 
 								</div>
@@ -270,7 +270,7 @@
 
 					</div>
 
-					<a href="" target="_self" class="btn btn-danger">CONTINUAR</a>
+					<button class="btn btn-danger" type="submit" form="form-order-cart-payment">CONTINUAR</button>
 
 				</div>
 

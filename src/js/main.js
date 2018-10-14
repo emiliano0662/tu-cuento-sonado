@@ -42,6 +42,10 @@ $(document).ready(function() {
 		form: '#form-crear-cuento',
 	});
 
+	$.validate({
+		form: '#form-order-cart-payment',
+	});
+
 	$("input[name=gender]").change(function () {
 
 		get_type = $(this).val();
@@ -310,6 +314,26 @@ $(document).ready(function() {
 		var seccion = $(this).data('seccion');
 
 		$('body,html').animate({ scrollTop: $(seccion).offset().top }, 1000, 'swing');
+
+	});
+
+	$("#btn-ir-carrito").on('click', function (event) {
+		event.preventDefault();
+
+		var $btn = $('#btn-ir-carrito').button('loading');
+
+		$.ajax({
+			cache: false,
+			type: 'POST',
+			url: $(this).data("href"),
+			success: function (data) {
+				
+				$btn.button('reset');
+
+				$(location).attr('href', "./order-cart.html");
+
+			}
+		});
 
 	});
 

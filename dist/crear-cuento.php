@@ -528,12 +528,14 @@
 					<div class="row">
 		
 						<div class="col-md-6">
-				
+
+							<a href="./crear-cuento.php" class="btn btn-default"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Regresar</a>
+
 						</div>
 		
 						<div class="col-md-6">
 		
-							<a href="./crear-cuento.php" class="btn btn-danger">Regresar</a>
+							<button type="button" id="btn-ir-carrito" class="btn btn-danger" data-loading-text="Cargando..." data-href="./generate-image/script-add-cart.php">Ir al carrito</button>
 		
 						</div>
 		
