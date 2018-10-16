@@ -15,7 +15,7 @@ if (!empty($img_user))  {
 
     $imageName = rand(0, 1000).date("YmdHis").".png";
     
-    $destinationPath = dirname(__FILE__).'/generate-image/assistant/imguser/';
+    $destinationPath = dirname(__FILE__).'/assistant/imguser/';
 
     file_put_contents($destinationPath.$imageName, $img_user);
 
