@@ -535,8 +535,9 @@
 		
 						<div class="col-md-6">
 		
-							<button type="button" id="btn-ir-carrito" class="btn btn-danger" data-loading-text="Cargando..." data-href="./generate-image/script-add-cart.php">Ir al carrito</button>
-		
+							<!--<button type="button" id="btn-ir-carrito" class="btn btn-danger" data-loading-text="Cargando..." data-href="./generate-image/script-add-cart.php">Ir al carrito</button>-->
+							<a href="./order-cart.php" class="btn btn-danger">Ir al carrito</a>
+						
 						</div>
 		
 					</div>

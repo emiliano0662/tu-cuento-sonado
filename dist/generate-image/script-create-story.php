@@ -15,7 +15,7 @@ if (!empty($img_user))  {
 
     $imageName = rand(0, 1000).date("YmdHis").".png";
     
-    $destinationPath = dirname(__FILE__).'/assistant/imguser/';
+    $destinationPath = dirname(__FILE__).'/generate-image/assistant/imguser/';
 
     file_put_contents($destinationPath.$imageName, $img_user);
 
@@ -23,5 +23,10 @@ if (!empty($img_user))  {
 }
 
 $_SESSION['image_user'] = $img_user;
+
+$_SESSION['hidde_value_type'] = $_POST['gender'];
+$_SESSION['hidde_value_eyes'] = $_POST['hidde_value_eyes'];
+$_SESSION['hidde_value_hair'] = $_POST['hidde_value_hair'];
+$_SESSION['hidde_value_skin'] = $_POST['hidde_value_skin'];
 
 ?>

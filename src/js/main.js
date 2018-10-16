@@ -212,15 +212,6 @@ $(document).ready(function() {
 			data: $(this).serialize(),
 			success: function (data) {
 
-				/*var element = document.createElement('a');
-				element.setAttribute('href', data);
-				element.setAttribute('target', '_blank');
-				element.setAttribute('download', 'tu-cuento-sonado');
-				element.style.display = 'none';
-				document.body.appendChild(element);
-				element.click();
-				document.body.removeChild(element);*/
-
 				$(".img-bookblock").each(function (index) {
 
 					var count = index + 1;
@@ -317,7 +308,7 @@ $(document).ready(function() {
 
 	});
 
-	$("#btn-ir-carrito").on('click', function (event) {
+	/*$("#btn-ir-carrito").on('click', function (event) {
 		event.preventDefault();
 
 		var $btn = $('#btn-ir-carrito').button('loading');
@@ -330,12 +321,12 @@ $(document).ready(function() {
 				
 				$btn.button('reset');
 
-				$(location).attr('href', "./order-cart.html");
+				$(location).attr('href', "./order-cart.php");
 
 			}
 		});
 
-	});
+	});*/
 
 	$("[data-dinaanim]").each(function () {
 

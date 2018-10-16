@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -123,14 +124,23 @@
 						<div class="row">
 
 							<div class="col-xs-12 col-sm-3 col-md-3">
-								<img src="./generate-image/script-avatar.php?type=boy&skin=1&eyes=1&hair=1" class="img-responsive">
+								<img src="./generate-image/script-avatar.php?type=<?= (empty($_SESSION['hidde_value_type']))? 1 : $_SESSION['hidde_value_type'] ?>&skin=<?= (empty($_SESSION['hidde_value_skin']))? 1 : $_SESSION['hidde_value_skin'] ?>&eyes=<?= (empty($_SESSION['hidde_value_eyes']))? 1 : $_SESSION['hidde_value_eyes'] ?>&hair=<?= (empty($_SESSION['hidde_value_hair']))? 1 : $_SESSION['hidde_value_hair'] ?>" class="img-responsive">
 							</div>
 
 							<div class="col-xs-12 col-sm-5 col-md-5">
 
 								<h2>Planeta Gelatina</h2>
-								<p>Emiliano</p>
+								<p><?= (empty($_SESSION['name']))? 1 : $_SESSION['name'] ?></p>
+
+								<?php if(empty($_SESSION['image_user'])): ?>
+
 								<small class="label label-danger">Sin foto</small>
+
+								<?php else: ?>
+
+								<small class="label label-success">Con foto</small>
+
+								<?php endif ?>
 							
 							</div>
 

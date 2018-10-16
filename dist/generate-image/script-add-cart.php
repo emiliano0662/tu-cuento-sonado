@@ -1,5 +1,5 @@
 <?php
 
-echo "prueba emiliano";
+echo "prueba";
 
 ?>

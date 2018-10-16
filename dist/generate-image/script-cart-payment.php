@@ -2,66 +2,73 @@
 
 $today       = date("dmYHis"); 
 $send_url    = 'https://sandbox.gateway.payulatam.com/ppp-web-gateway';
-$encrypt_key = '4Vj8eK4rloUd272L48hsrarnUA';
-$api_key     = '5tedccvna3v5qlj9k0e62s7b5f';
+$api_key     = '4Vj8eK4rloUd272L48hsrarnUA';
 
 $data = array(
-    'accountId'         => "505658", 
-    'merchantId'        => "504698",
-    'referenceCode'     => "Pay".$today,
+    'accountId'         => "512321", 
+    'merchantId'        => "508029",
+    'referenceCode'     => "TCS-".$today,
     'tax'               => 0,
     'taxReturnBase'     => 0,
-    'amount'            => 30,
-    'currency'          => "USD",
-    'description'       => "crea tu cuento",
+    'amount'            => 10000,
+    'currency'          => "COP",
+    'description'       => "Tu Cuento Soñado",
     'responseUrl'       => "",
     'confirmationUrl'   => "",
     'test'              => 1,
-    'buyerEmail'        => "",
-    'buyerFullName'     => "",
-    'lng'               => 'en'
+    'buyerEmail'        => $_POST['email'],
+    'buyerFullName'     => $_POST['name']." ".$_POST['surname'],
+    'lng'               => 'es'
 );
 
-$aux = $encrypt_key."~".$data['merchantId']."~".$data['referenceCode']."~".$data['amount']."~".$data['currency'];
+$aux = $api_key."~".$data['merchantId']."~".$data['referenceCode']."~".$data['amount']."~".$data['currency'];
 
 $data['signature'] = md5($aux);
 
 ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Tu Cuento Soñado</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <title>Tu Cuento Soñado</title>
+
+    <style type="text/css">
+        #windows-fixed {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        #windows-fixed h3 {
+            font-family: 'Arial';
+            font-size: 40px;
+            color: #000;
+        }
+    </style>
+
 </head>
-
 <body>
 
-<table width="300" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center" valign="middle">Cargando...</td>
-  </tr>
-</table>
+    <div id="windows-fixed"><h3>Cargando...</h3></div>
 
-<form id="pay" method="post" action="<?=$send_url?>" target="_self">
+    <form id="pay" method="post" action="<?=$send_url?>" target="_self">
 
-    <?php foreach($data as $key => $value): ?>
+        <?php foreach($data as $key => $value): ?>
 
-        <input name="<?=$key?>" type="hidden" value="<?=$value?>">
+            <input name="<?=$key?>" type="hidden" value="<?=$value?>">
 
-    <?php endforeach ?>
+        <?php endforeach ?>
 
-</form>
+    </form>
 
-<script type="text/javascript">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">$(document).ready(function() { $("#pay").submit(); });</script>
 
-$(document).ready(function() {
-    
-    //$("#pay").submit();
-    
-});
-
-</script>
 </body>
 </html>
