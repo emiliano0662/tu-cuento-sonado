@@ -189,6 +189,18 @@
                         border-color: #08c;
                     }
                 }
+
+                &.content-items-hairstyle {
+                    
+                    .carousel-item {
+                        padding: 0px;
+
+                        .content-color {
+                            width: 100% !important;
+                            height: auto !important;
+                        }
+                    }
+                }
             }
         }
     }

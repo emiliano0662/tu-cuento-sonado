@@ -105,6 +105,7 @@
 		<input type="hidden" id="hidde_value_skin" name="hidde_value_skin" value="1">
 		<input type="hidden" id="hidde_value_eyes" name="hidde_value_eyes" value="1">
 		<input type="hidden" id="hidde_value_hair" name="hidde_value_hair" value="1">
+		<input type="hidden" id="hidde_value_hairstyle" name="hidde_value_hairstyle" value="1">
 
 		<input type="hidden" id="hidden_croppie_img_file" name="hidden_croppie_img_file">
 
@@ -331,6 +332,46 @@
 							
 							</div>
 
+							<div class="item content-items-hairstyle">
+							
+								<div class="carousel-title">
+									<h3>Peinado</h3>
+								</div>
+							
+								<div class="carousel-item active" data-item="hairstyle" data-type="1">
+									<div class="content-color">
+										<img src="./generate-image/script-hair.php?gender=girl&type=1&color=1" id="img-select-hair-1" class="img-responsive">
+									</div>
+								</div>
+								
+								<div class="carousel-item" data-item="hairstyle" data-type="2">
+									<div class="content-color">
+										<img src="./generate-image/script-hair.php?gender=girl&type=2&color=1" id="img-select-hair-2" class="img-responsive">
+									</div>
+								</div>
+
+								<div class="carousel-item" data-item="hairstyle" data-type="3">
+									<div class="content-color">
+										<img src="./generate-image/script-hair.php?gender=girl&type=3&color=1" id="img-select-hair-3" class="img-responsive">
+									</div>
+								</div>
+
+								<div class="carousel-item" data-item="hairstyle" data-type="4">
+									<div class="content-color">
+										<img src="./generate-image/script-hair.php?gender=girl&type=4&color=1" id="img-select-hair-4" class="img-responsive">
+									</div>
+								</div>
+
+								<div class="carousel-item" data-item="hairstyle" data-type="5">
+									<div class="content-color">
+										<img src="./generate-image/script-hair.php?gender=girl&type=5&color=1" id="img-select-hair-5" class="img-responsive">
+									</div>
+								</div>
+
+								<div class="carousel-item"></div>
+							
+							</div>
+
 						</div>
 
 						<a href="#" class="btn-carousel-create-story btn-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
@@ -341,7 +382,7 @@
 					<div class="col-md-8">
 						
 						<div id="create-story-avatar">
-							<img src="./generate-image/script-avatar.php?type=girl&skin=1&eyes=1&hair=1" id="img-select-avatar" class="img-responsive">
+							<img src="./generate-image/script-avatar.php?type=girl&skin=1&eyes=1&hair=1&hairstyle=1" id="img-select-avatar" class="img-responsive">
 						</div>
 
 					</div>

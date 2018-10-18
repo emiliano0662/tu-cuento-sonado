@@ -19,8 +19,8 @@ imagefill($img, 0, 0, $trans_bg);
 if(empty($_image_user)) {
 
     // Imagen Fondo
-    $cur_bg = imagecreatefrompng("../images/background/3.png");
-    
+    $cur_bg = imagecreatefrompng("../images/background/3-empty.png");
+
     // Imagen Fondo
     imagecopy($img, $cur_bg, 0,0,0,0, 850,425);
 

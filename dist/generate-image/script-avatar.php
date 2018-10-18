@@ -3,6 +3,7 @@ $get_type = (empty($_GET['type']))? 'girl' : $_GET['type'];
 $get_skin = (empty($_GET['skin']))? '1' : $_GET['skin'];
 $get_eyes = (empty($_GET['eyes']))? '1' : $_GET['eyes'];
 $get_hair = (empty($_GET['hair']))? '1' : $_GET['hair'];
+$get_hairstyle = (empty($_GET['hairstyle']))? '1' : $_GET['hairstyle'];
 
 $img = imagecreatetruecolor(230, 200);
 
@@ -19,7 +20,7 @@ $cur_skin = imagecreatefrompng("./images/".$get_type."/skin/".$get_skin.".png");
 // Cargar imagen Ojos
 $cur_eyes = imagecreatefrompng("./images/".$get_type."/eyes/".$get_eyes.".png");
 // Cargar imagen Cabello
-$cur_hair = imagecreatefrompng("./images/".$get_type."/hair/".$get_hair.".png");
+$cur_hair = imagecreatefrompng("./images/".$get_type."/hair/type-two-".$get_hairstyle."/".$get_hair.".png");
 
 // Copia sobre la imagen Piel
 imagecopy($img, $cur_skin, 0,0,0,0, 230, 200);

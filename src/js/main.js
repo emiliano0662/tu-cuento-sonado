@@ -4,6 +4,7 @@ $(document).ready(function() {
 	var get_skin = 1;
 	var get_eyes = 1;
 	var get_hair = 1;
+	var get_hairstyle = 1;
 
 	$(".btn-bookblock-left").on('click', function (event) {
 		event.preventDefault();
@@ -50,7 +51,12 @@ $(document).ready(function() {
 
 		get_type = $(this).val();
 
-		$("#img-select-avatar").attr("src", "./generate-image/script-avatar.php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair);
+		for (let index = 1; index < 6; index++) {
+			
+			$("#img-select-hair-"+index).attr("src", "./generate-image/script-hair.php?gender="+get_type+"&type="+index+"&color="+get_hair);
+		}
+
+		$("#img-select-avatar").attr("src", "./generate-image/script-avatar.php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair+"&hairstyle="+get_hairstyle);
 
 	});
 
@@ -111,9 +117,18 @@ $(document).ready(function() {
 				get_hair = type;	
 				$('#hidde_value_hair').val(type);
 				break;
+			case 'hairstyle':
+				get_hairstyle = type;
+				$('#hidde_value_hairstyle').val(type);
+				break;
 		}
 
-		$("#img-select-avatar").attr("src", "./generate-image/script-avatar.php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair);
+		for (let index = 1; index < 6; index++) {
+			
+			$("#img-select-hair-"+index).attr("src", "./generate-image/script-hair.php?gender="+get_type+"&type="+index+"&color="+get_hair);
+		}
+
+		$("#img-select-avatar").attr("src", "./generate-image/script-avatar.php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair+"&hairstyle="+get_hairstyle);
 
 	});
 
@@ -237,8 +252,10 @@ $(document).ready(function() {
 					$('#hidde_value_eyes').val(1);
 					get_hair = 1;
 					$('#hidde_value_hair').val(1);
+					get_hairstyle = 1;
+					$('#hidde_value_hairstyle').val(1);
 	
-					$("#img-select-avatar").attr("src", "./generate-image/script-avatar.php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair);
+					$("#img-select-avatar").attr("src", "./generate-image/script-avatar.php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair+"&hairstyle="+get_hairstyle);
 	
 					$("#img-avatar-pre-select").hide();	
 					$("#upload-croppie").croppie('destroy');
