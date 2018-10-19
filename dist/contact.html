@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -104,7 +103,7 @@
 			<div class="row">
 				<div class="col-md-12">
 
-					<h1>Tu carrito</h1>
+					<h1>Contacta con nosotros</h1>
 
 				</div>
 			</div>
@@ -112,118 +111,39 @@
 		</div>
 	</section>
 
-	<section class="order-cart-block">
+	<section class="contact-block">
 		<div class="container">
 	
-			<div class="row">
+			<form action="" method="POST" id="form-contact">
 
-				<div class="col-md-8">
+				<div class="form-group">
+					<input type="text" class="form-control" name="name" placeholder="Nombre" data-validation="required" data-validation-error-msg="* Campo requerido">
+				</div>
 				
-					<div class="container-box">
-
-						<div class="row">
-
-							<div class="col-xs-12 col-sm-3 col-md-3">
-								<img src="./generate-image/script-avatar.php?type=<?= (empty($_SESSION['hidde_value_type']))? 1 : $_SESSION['hidde_value_type'] ?>&skin=<?= (empty($_SESSION['hidde_value_skin']))? 1 : $_SESSION['hidde_value_skin'] ?>&eyes=<?= (empty($_SESSION['hidde_value_eyes']))? 1 : $_SESSION['hidde_value_eyes'] ?>&hair=<?= (empty($_SESSION['hidde_value_hair']))? 1 : $_SESSION['hidde_value_hair'] ?>" class="img-responsive">
-							</div>
-
-							<div class="col-xs-12 col-sm-5 col-md-5">
-
-								<h2>Planeta Gelatina</h2>
-								<p><?= (empty($_SESSION['name']))? 1 : $_SESSION['name'] ?></p>
-
-								<?php if(empty($_SESSION['image_user'])): ?>
-
-								<small class="label label-danger">Sin foto</small>
-
-								<?php else: ?>
-
-								<small class="label label-success">Con foto</small>
-
-								<?php endif ?>
-							
-							</div>
-
-							<div class="col-xs-12 col-sm-4 col-md-4">
-
-								<h3>$32.00</h3>
-								<a href="./crear-cuento.php" target="_self">Editar opciones</a>
-
-							</div>
-
-						</div>
-
-					</div>
-
-					<h2 class="subtitle">Opciones de envío</h2>
-
-					<div class="container-box delivery-time">
-
-						<div class="content">
-
-							<div class="row">
-								
-								<div class="col-xs-12 col-sm-7 col-md-7">
-									<p>Tiempo de entrega estimado<br><b>8 - 12 días</b></p>
-								</div>
-								
-								<div class="col-xs-12 col-sm-5 col-md-5">
-									<p>Envío<br><b>$3.00</b></p>
-								</div>
-								
-							</div>
-						
-						</div>
-
-					</div>
-
+				<div class="form-group">
+					<input type="email" class="form-control" name="email" placeholder="E-mail" data-validation="required" data-validation-error-msg="* Campo requerido">
 				</div>
 
-				<div class="col-md-4">
-				
-					<div class="container-box">
-						
-						<h2 class="subtitle">Resumen</h2>
-						
-						<table>
-						
-							<thead>
-						
-								<tr>
-									<th class="text-right">Subtotal:</th>
-									<th class="text-left"><span>$21.25</span></th>
-								</tr>
-						
-								<tr>
-									<th class="text-right">Envío:</th>
-									<th class="text-left"><span>$0.00</span></th>
-								</tr>
-						
-								<tr>
-									<th colspan="2"></th>
-								</tr>
-
-							</thead>
-						
-							<tbody>
-						
-								<tr>
-									<td class="text-right">Total:</td>
-									<td class="text-left"><span>$21.25</span></td>
-								</tr>
-						
-							</tbody>
-						
-						</table>
-
-					</div>
-
-					<a href="./order-cart-payment.html" target="_self" class="btn btn-danger">REALIZAR PEDIDO</a>
-				
+				<div class="form-group">
+					<input type="text" class="form-control" name="phone" placeholder="Teléfono" data-validation="required" data-validation-error-msg="* Campo requerido">
 				</div>
 
-			</div>
-	
+				<div class="form-group">
+					<textarea class="form-control" name="message" placeholder="Mensaje" rows="5" data-validation="required" data-validation-error-msg="* Campo requerido"></textarea>
+				</div>
+
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="policies" data-validation="required" data-validation-error-msg="* Campo requerido"> He leído y acepto la política de privacidad ( <a href="./terminos-y-condiciones.html" target="_self">link</a> )
+					</label>
+				</div>
+
+				<div class="form-group">
+					<button type="submit" class="btn btn-danger">Enviar</button>
+				</div>
+
+			</form>
+
 		</div>
 	</section>
 

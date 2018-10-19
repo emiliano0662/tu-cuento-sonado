@@ -47,6 +47,10 @@ $(document).ready(function() {
 		form: '#form-order-cart-payment',
 	});
 
+	$.validate({
+		form: '#form-contact',
+	});
+
 	$("input[name=gender]").change(function () {
 
 		get_type = $(this).val();

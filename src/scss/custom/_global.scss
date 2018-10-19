@@ -23,6 +23,55 @@ section {
 	background: #FFF url('../img/bg-banner-home.jpg') top left / 1px 500px repeat-x;
 }
 
+.contact-block {
+
+	.container {
+		max-width: 650px;
+
+		form {
+			
+			.form-control {
+				height: auto;
+				padding: 12px 15px;
+				border: 3px solid #e6e6e6;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				color: #000;
+			}
+
+			.checkbox {
+
+				label {
+
+					input {
+						margin-top: 8px;
+					}
+				}
+			}
+
+			.btn-danger {
+				width: 100%;
+				padding: 0px 25px;
+				margin-bottom: 40px;
+				border: 0px;
+				line-height: 48px;
+				text-align: center;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 500;
+				font-size: 16px;
+				color: #fff;
+				-webkit-border-radius: 30px;
+				-moz-border-radius: 30px;
+				border-radius: 30px;
+				border-color: #e54e40;
+				background-color: #e54e40;
+			}
+		}
+	}
+}
+
 @media  (min-width: $screen-md) and (max-width: $screen-lg) {
 
 }

@@ -67,22 +67,22 @@
 								<a href="index.html">Inicio</a>
 							</li>
 							<li>
-								<a href="index.html">Como funciona</a>
+								<a href="index.html#como-funciona">Como funciona</a>
 							</li>
 							<li>
-								<a href="index.html">Opiniones</a>
+								<a href="index.html#comentarios">Opiniones</a>
 							</li>
 							<li>
 								<a href="preguntas-frecuentes.html">Preguntas frecuentes</a>
 							</li>
 							<li>
-								<a href="index.html">Nuestros cuentos</a>
+								<a href="index.html#nuestros-cuentos">Nuestros cuentos</a>
 							</li>
 							<li>
-								<a href="index.html">Como son</a>
+								<a href="index.html#como-son">Como son</a>
 							</li>
 							<li>
-								<a href="index.html">Contacto</a>
+								<a href="./contact.html" target="_self">Contacto</a>
 							</li>
 							<li>
 								<a href="index.html">Tienda</a>
