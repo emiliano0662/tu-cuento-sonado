@@ -221,6 +221,14 @@ $(document).ready(function() {
 
 	$("#form-crear-cuento").submit(function (event) {
 		event.preventDefault();
+		
+		$(".img-bookblock").each(function (index) {
+			
+			var count = index + 1;
+			
+			$(this).attr("src", "./generate-image/script-create-image/page-"+count+".php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair+"&hairstyle="+get_hairstyle);
+			
+		});
 
 		var $btn = $('#btn-crear-cuento').button('loading');
 
@@ -231,14 +239,6 @@ $(document).ready(function() {
 			data: $(this).serialize(),
 			success: function (data) {
 
-				$(".img-bookblock").each(function (index) {
-					
-					var count = index + 1;
-					
-					$(this).attr("src", "./generate-image/script-create-image/page-"+count+".php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair+"&hairstyle="+get_hairstyle);
-					
-				});
-				
 				setTimeout(function () {
 
 					$btn.button('reset');
