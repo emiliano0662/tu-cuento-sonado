@@ -187,7 +187,7 @@
 									<div class="form-group">
 										<div class="radio">
 											<label>
-												<input type="radio" name="typography" value="1" checked="checked"> Normal
+												<input type="radio" name="typography" value="0" checked="checked"> Normal
 											</label>
 										</div>
 									</div>
@@ -199,7 +199,7 @@
 									<div class="form-group">
 										<div class="radio">
 											<label>
-												<input type="radio" name="typography" value="2"> Mayúsculas
+												<input type="radio" name="typography" value="1"> Mayúsculas
 											</label>
 										</div>
 									</div>

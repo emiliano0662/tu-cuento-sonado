@@ -232,21 +232,19 @@ $(document).ready(function() {
 			success: function (data) {
 
 				$(".img-bookblock").each(function (index) {
-
+					
 					var count = index + 1;
-
-					$(this).attr("src", "./generate-image/script-create-image/page-" + count + ".php?type=" + get_type + "&skin=" + get_skin + "&eyes=" + get_eyes + "&hair=" + get_hair);
-
+					
+					$(this).attr("src", "./generate-image/script-create-image/page-"+count+".php?type="+get_type+"&skin="+get_skin+"&eyes="+get_eyes+"&hair="+get_hair+"&hairstyle="+get_hairstyle);
+					
 				});
-
+				
 				setTimeout(function () {
 
 					$btn.button('reset');
 					
 					$(".create-story-block").hide();
 					$(".container-create-story-4").fadeIn();
-
-					$('#bb-bookblock').bookblock();
 
 					$('#form-crear-cuento')[0].reset();
 	
@@ -263,6 +261,8 @@ $(document).ready(function() {
 	
 					$("#img-avatar-pre-select").hide();	
 					$("#upload-croppie").croppie('destroy');
+
+					$('#bb-bookblock').bookblock();
 
 				}, 5000);
 			}

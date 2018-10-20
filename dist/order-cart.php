@@ -124,7 +124,7 @@
 						<div class="row">
 
 							<div class="col-xs-12 col-sm-3 col-md-3">
-								<img src="./generate-image/script-avatar.php?type=<?= (empty($_SESSION['hidde_value_type']))? 1 : $_SESSION['hidde_value_type'] ?>&skin=<?= (empty($_SESSION['hidde_value_skin']))? 1 : $_SESSION['hidde_value_skin'] ?>&eyes=<?= (empty($_SESSION['hidde_value_eyes']))? 1 : $_SESSION['hidde_value_eyes'] ?>&hair=<?= (empty($_SESSION['hidde_value_hair']))? 1 : $_SESSION['hidde_value_hair'] ?>" class="img-responsive">
+								<img src="./generate-image/script-avatar.php?type=<?= (empty($_SESSION['hidde_value_type']))? 1 : $_SESSION['hidde_value_type'] ?>&skin=<?= (empty($_SESSION['hidde_value_skin']))? 1 : $_SESSION['hidde_value_skin'] ?>&eyes=<?= (empty($_SESSION['hidde_value_eyes']))? 1 : $_SESSION['hidde_value_eyes'] ?>&hair=<?= (empty($_SESSION['hidde_value_hair']))? 1 : $_SESSION['hidde_value_hair'] ?>&hairstyle=<?= (empty($_SESSION['hidde_value_hairstyle']))? 1 : $_SESSION['hidde_value_hairstyle'] ?>" class="img-responsive">
 							</div>
 
 							<div class="col-xs-12 col-sm-5 col-md-5">
@@ -146,7 +146,7 @@
 
 							<div class="col-xs-12 col-sm-4 col-md-4">
 
-								<h3>$32.00</h3>
+								<h3>$35.000,00</h3>
 								<a href="./crear-cuento.php" target="_self">Editar opciones</a>
 
 							</div>
@@ -168,7 +168,7 @@
 								</div>
 								
 								<div class="col-xs-12 col-sm-5 col-md-5">
-									<p>Envío<br><b>$3.00</b></p>
+									<p>Envío<br><b>$15.000,00</b></p>
 								</div>
 								
 							</div>
@@ -191,12 +191,12 @@
 						
 								<tr>
 									<th class="text-right">Subtotal:</th>
-									<th class="text-left"><span>$21.25</span></th>
+									<th class="text-left"><span>$35.000,00</span></th>
 								</tr>
 						
 								<tr>
 									<th class="text-right">Envío:</th>
-									<th class="text-left"><span>$0.00</span></th>
+									<th class="text-left"><span>$15.000,00</span></th>
 								</tr>
 						
 								<tr>
@@ -209,7 +209,7 @@
 						
 								<tr>
 									<td class="text-right">Total:</td>
-									<td class="text-left"><span>$21.25</span></td>
+									<td class="text-left"><span>$50.000,00</span></td>
 								</tr>
 						
 							</tbody>

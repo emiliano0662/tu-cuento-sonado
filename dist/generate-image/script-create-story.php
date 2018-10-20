@@ -28,5 +28,6 @@ $_SESSION['hidde_value_type'] = $_POST['gender'];
 $_SESSION['hidde_value_eyes'] = $_POST['hidde_value_eyes'];
 $_SESSION['hidde_value_hair'] = $_POST['hidde_value_hair'];
 $_SESSION['hidde_value_skin'] = $_POST['hidde_value_skin'];
+$_SESSION['hidde_value_hairstyle'] = $_POST['hidde_value_hairstyle'];
 
 ?>

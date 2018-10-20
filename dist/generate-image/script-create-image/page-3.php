@@ -47,7 +47,14 @@ imagettftextjustified($img,18,0,495,110,$text_color,"../fonts/Neucha.ttf",((empt
 // Liberar memoria
 imagedestroy($cur_bg);
 
+if(!empty($_image_user)) {
+
+    imagedestroy($cur_skin);
+}
+
 header('Content-Type: image/png');
+header("Cache-Control: private, max-age=10800, pre-check=10800");
+header("Expires: " . date(DATE_RFC822,strtotime("1 day")));
 
 imagepng($img);
 

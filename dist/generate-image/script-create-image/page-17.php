@@ -31,6 +31,8 @@ imagettftextjustified($img,12,0,200,105,$text_color,"../fonts/Neucha.ttf",((empt
 imagedestroy($cur_bg);
 
 header('Content-Type: image/png');
+header("Cache-Control: private, max-age=10800, pre-check=10800");
+header("Expires: " . date(DATE_RFC822,strtotime("1 day")));
 
 imagepng($img);
 
